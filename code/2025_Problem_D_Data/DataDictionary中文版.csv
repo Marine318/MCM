@@ -1,0 +1,117 @@
+data file,variables,explanation,example
+Bus_Routes,Route_Name,服务于特定地理区域的公共交通线路名称，例如公交或铁路线路名称。,"For example, ""BALTIMORE - ANNAPOLIS""."
+,Route_Type,指该路线所代表的公共交通服务类型,"MTA Commuter Bus or 
+MTA Local Bus - Express BusLink or  
+MTA Local Bus - LocalLink or 
+MTA Local Bus - CityLink"
+,Route_Numb,分配给该路线的数字标识符。 ,"For instance, ""Route 22"" or ""Route 210"" or ""City Link Green"""
+,Distributi,指的是乘客量数据或交通数据的分布情况，这可能包括乘客量在不同时间、不同日期或路线的不同路段上是如何分布的。它能够展示高峰时段与非高峰时段的乘客分布状况，或者乘客在整条路线上的分布方式,All labeled with "E1 - Public Domain - Internal Use Only"
+,Shape__Length,地理信息系统（GIS）中，以内部单位衡量的路线或路段的长度。这些数据有助于呈现路线的实际长度范围。,A numeric value between 0.02 and 0.5.
+Bus_Stops,Y,OSM（OpenStreetMap，开放街道地图）数据集中某点（节点）的纬度坐标，用于地理定位。 ,A numeric value between 39.2 and 39.4.
+,X,开放街道地图（OSM）数据集中某一点（节点）的经度坐标，也用于地理定位,A numeric value between -76.8 and -76.5.
+,stop_name,特定公交站点或车站的名称或标识。它也可能表明所在街道的方位以及公交车辆的行驶方向,"For example, ""CYLBURN AVE & GREENSPRING AVE fs wb"""
+,Rider_On,在特定时间段内，在某个给定公交站点上车的乘客数量,Numeric values.
+,Rider_Off,在特定时间段内，在某一给定站点下车的乘客数量。 ,Numeric values.
+,Rider_Tota,在特定公交站点上车或下车的乘客总数（通常是上车乘客数“Rider_On”与下车乘客数“Rider_Off”之和 ）。,Numeric values.
+,Stop_Rider,某一站点的总乘客数，可能指的是该特定站点的上车乘客总数、下车乘客总数，或者是两者之和。 ,Numeric values.
+,Routes_Ser,特定公交站点所服务的公交线路的标识符或描述信息,"This could list the bus, light rail, or metro routes that have stops at that location."
+,Distributi,可能指的是客流量数据的分布情况，或许展示了诸如不同时段的分布、高峰时段客流量，又或是不同日期或线路的客流量等模式。 ,All labeled with "E1 - Public Domain - Internal Use Only"
+,Mode,指所使用的交通方式。,"For example, ""Bus"" or ""Commuter Bus"" or a combination of the two."
+,Shelter,表示公交站点是否有为乘客提供的候车亭或其他遮风挡雨设施。 ,"""yes"" or ""no"""
+,County,公交站点所在县的名称或代码。在公交线路跨越多个县界的大都市地区，这一信息尤为重要,"""Baltimore City"" or ""Baltimore County"""
+,stop_id,系统为每个公交站点分配的唯一标识符，可用于在数据集中对该站点进行唯一引用,"Numeric value, not values are used."
+nodes_all & nodes_drive,osmid,开放街道地图（OSM）中某一元素的唯一标识符。它代表一个节点,Numeric value
+,y,开放街道地图（OSM）数据集中某一点（节点）的纬度坐标，用于地理定位,A numeric value between 39 and 40.
+,x,开放街道地图（OSM）数据集中某一点（节点）的经度坐标，同样用于地理定位,A numeric value between -77 and -76.
+,street_count,"与特定节点相连的街道（或路径）数量。它能够表明该节点是交叉路口还是端点。
+",An integer between 1 and 15.
+,highway,表明道路或路径的类型,"It can represent values like residential, primary, secondary, footway, etc., based on OSM's tagging system.  For example, motorway or crossing."
+,ref,道路、路径或其他基础设施的参考代码,"This might correspond to road numbers (e.g., ""I-80"" for an interstate)."
+,railway,指定节点或路径是否属于铁路的一部分,"For example, level crossing or subway entrance."
+,junction,它表示有关路口（交汇处）的信息，比如路口的类型,"For example, a roundabout."
+,geometry,这指的是对线或区域的空间表示，通常以诸如 WKT（已知文本格式）等形式存储。它用于描述道路、边界等要素的形状或路径。,"For example, nodes are all points on a map."
+edges_all & edges_drive,u,在地图的图形表示中，是一段（边）的起始节点，通过其开放街道地图（OSM）ID 来识别,Numeric value corresponding to nodes.
+,v,在地图的图形化表示中，是某条线段（边）的结束节点，通过其开放街道地图（OSM）标识符来识别,Numeric value corresponding to nodes.
+,key,这是一个唯一标识符或键，用于区分同一对节点 u 和 v 之间的多条边。当存在多条平行道路或路径时经常会用到,An integer less than 5.
+,osmid,这指的是开放街道地图（OSM）中边（道路、路径或其他基础设施）的唯一标识符。它可指向其所属的路径或关系。,Numeric value
+,bridge,表示该路段是否为桥梁（是或否）。它可能还包含有关桥梁的额外细节,Blank indicates no.
+,highway,它描述道路或路径的类型，与上一组中的 “highway” 字段类似,"Examples include motorway, residential, footway, etc."
+,lanes,指道路路段的车道数量,Integer value.
+,maxspeed,道路的最高限速，单位为英里每小时（mph）,55mph or a list of different speed limits on a given road.
+,oneway,表示道路是否为单向通行（是或否）。它可能还会包含具体的流向信息，比如 -1 表示反向。,True or False
+,ref,这是道路的参考代码，例如地方、县、州或联邦级别的道路代码,"Examples include I 95, US 1, or MD 140."
+,reversed,这是一个布尔标志（True 或 False），用于指示图中边的方向是否与底层 OSM 数据中的方向相反,"False means that u to v appears in the OSM database.  True means that v to u appears in the database.  For a one way road, all ""reversed"" are false.  For a two-way road, one direction will be true and the other false."
+,length,这指的是道路路段的长度，通常以米为单位进行测量,"For example, the section of road is 55.489 meters long."
+,geometry,这是路段的空间表示，通常以 WKT（已知文本格式）或 GeoJSON 等格式存储，用于定义道路的路径或曲线。,"For example, edges are all linestrings on a map."
+,name,若存在的话，指道路、路径或路段的名称,"For example, ""Main Street"" or ""Broadway."""
+,service,它描述与道路相关的服务类型。,"Examples include alley, driveway, or parking_aisle."
+,access,它定义了可达性限制,"Examples include private, no, or permissive."
+,width,这表示道路或路径的宽度，单位为米,Numeric value or several numeric values
+,tunnel,表示该路段是否为隧道（是或否），可能还包含有关隧道的额外细节,yes or no
+,area,指定该路段是否属于某一地图区域（是或否）。例如，它可以表示广场或其他开放空间,no
+,junction,它提供关于交叉路口类型的详细信息,"For example, a roundabout, jughandle, or intersection."
+MDOT_SHA_Annual_Average_Daily_Traffic_Baltimore,node start,这指的是在道路名称和路段起点之间所有节点的交集,List of OSMid for the nodes.
+,node(s) end,这表示在道路名称对应的道路路段终点之间所有节点的交集,List of OSMid for the nodes.
+,GIS Object ID,这是地理信息系统（GIS）数据集中每个地理对象的唯一标识符。,Numeric value
+,Station ID,这是分配给每个交通计数站的唯一标识符,"Numeric code following S, B, or V"
+,County Code,这是一个数字代码，代表马里兰州的特定县,3 or 24
+,County Name,这指的是交通站点所在县的名称,Baltimore County or Baltimore City
+,Municipal Code,这是在收集交通数据的市（镇、城市或村庄）的唯一标识符,0 or 999
+,Municipality Name,这是指交通站点所在的市（镇、城市或村庄）的名称,Baltimore City or None
+,Road Name,这是记录交通流量计数的道路名称,10th St
+,Route Prefix,这是用于识别道路路线的前缀,"For example,  ""MD"" for Maryland highways."
+,Route Number,这是分配给道路路线的具体编号,MD 100
+,Route Suffix,这是用于路线识别的后缀，通常用于具有特定细分的路线,MD 100A
+,Milepoint,这指的是道路上进行交通流量计数的具体里程标记或位置点,Distance from the corner in meters or -1 for no value.
+,Begin Section,这是为了交通计数目的而确定的道路路段的起点,Numerical distance in meters of the starting point of the road section.
+,End Section,这是为交通计数目的而设定的道路路段的终点,Numerical distance from the starting point of the road.
+,Station Description,这是对交通站点位置或特征的文字描述,"e.g., 10TH ST - BETWEEN MD 173 & WASHBURN AVE"
+,Road Section,这指的是道路上两点之间（通常是 “路段起点” 和 “路段终点” 之间）的特定路段,"e.g., It is the section of Academy Ave from GWYNNBROOK AVE TO HIGH FALCON RD"
+,Rural / Urban,这是将区域划分为乡村（欠发达）或城市（高度发达）的分类,Rural or Urban
+,Functional Class Code,这是一种基于道路功能对其进行分类的代码（例如，分类为当地道路、主干道、高速公路等）,A number 1 thru 7 corresponding to the functional classes below.
+,Functional Class,这是基于道路在交通网络中的作用对其进行的类别划分,"e.g., interstate or local road"
+,Route ID,交通网络中道路或路线的当前标识符，用于在整个交通网络中唯一标识特定的道路或路线,"e.g., 03000CO01213--1-----"
+,Mainline,指该站点是否位于路线的主要（主线）部分,1 or 2
+,Peak Hour Direction,这是指在交通高峰时段最为显著的交通流方向,"0, 1, 2, or 3"
+,Number of Lanes,这是指给定道路路段在行驶方向上的车道总数,Small integer value
+,Counted / Factored,这是用于表明交通流量计数是直接计数得到的，或者根据已知交通模式进行调整（推算）得到的,"C = counted, F = factored"
+,STMP Sequence,用于识别站点在系统或数据集中的位置或顺序的序号。这有助于按照特定顺序对交通站点进行排列和管理，方便数据的组织和检索。,Integer value less than 10
+,K-Factor,这是一个基于统计模型，用于调整高峰时段交通流量计数数据的系数。对于连续计数站点，它表示年平均日交通量在第 30 高小时流量中所占的比例；对于短时长计数站点，它表示高峰小时流量的比例。,Numeric value
+,D-Factor,这是一个用于调整交通数据以反映定向交通流的系数（在某些数据集中，与特定时间段相关）。对于连续计数站，它是在第 30 高小时流量期间朝高峰方向移动的交通百分比；对于短时长计数站，它是高峰小时流量期间朝高峰方向移动的交通百分比。,Numeric value
+,North-East Split,这是指交通流量中朝北方或东方方向的百分比。,Numeric between 0 and 100.
+,South-West Split,这是指交通中朝南或朝西方向的百分比,Numeric between 0 and 100.
+,Average Vehicle Miles Traveled (AVMT),这是对特定时间段内给定区域中车辆行驶总里程的一种度量,Numeric value
+,Link to Count Details,这是指向包含特定交通计数数据更详细信息的网页或文档的引用,URL
+,AADT 2014,年平均日交通量（Annual Average Daily Traffic，AADT）指的是预计一年中平均每天通过某一给定位置的车辆数量。这里提到的 AADT 是 2014 年的数据,Numeric value
+,AADT 2015,The AADT for the year 2015.,Numeric value
+,AADT 2016,The AADT for the year 2016.,Numeric value
+,AADT 2017,The AADT for the year 2017.,Numeric value
+,AADT 2018,The AADT for the year 2018.,Numeric value
+,AADT (Current),"查询时可用的最新年平均日交通量（AADT）数据，这一数据能反映在查询时刻所获取到的关于特定位置最新的年平均每日车辆通行数量，有助于实时了解该地点的交通繁忙程度。
+",Numeric value
+,AAWDT 2014,年平均工作日交通量（Annual Average Weekday Traffic，AAWDT）是指预计在一年中平均每个工作日（周一至周五）通过某一给定位置的车辆数量。这里特指 2014 年的数据。,Numeric value
+,AAWDT 2015,The AAWDT for the year 2015.,Numeric value
+,AAWDT 2016,The AAWDT for the year 2016.,Numeric value
+,AAWDT 2017,The AAWDT for the year 2017.,Numeric value
+,AAWDT 2018,The AAWDT for the year 2018.,Numeric value
+,AAWDT (Current),查询时可获取的最新的年平均工作日交通量（AAWDT）数据，能让我们了解到在查询时刻该位置工作日的交通繁忙程度。,Numeric value
+,AADT Motorcycle,专门针对摩托车的年平均日交通量计数,Numeric value
+,AADT Car,The AADT specifically for cars.,Numeric value
+,AADT Light Truck,这是专门针对轻型卡车的年平均日交通量（AADT）,Numeric value
+,AADT Bus,The AADT specifically for buses.,Numeric value
+,AADT Single-Unit Truck,The AADT specifically for single-unit trucks.  Percentage of Trucks (FHWA Classes 4 -7).,Numeric value
+,AADT Combination-Unit Truck,"The AADT specifically for combination-unit trucks (e.g., trucks with trailers).  Percentage of Trucks (FHWA Classes 8-13).",Numeric value
+,Location Error,指交通站点地理位置的误差或不确定性程度,All blank
+,Shape__Length0,解释为道路或路段的长度，可能以米为单位进行测量，并且作为形状属性存储在数据集中，通过这个变量可以获取到相应道路或路段长度的信息。,Numeric value
+,GIS Shape Length,地理信息系统（GIS）单位下道路或路段的长度，很可能以米为度量单位,Numeric value
+,AADT 2019,The AADT for the year 2019.,Numeric value
+,AAWDT 2019,The AAWDT for the year 2019.,Numeric value
+,AADT 2020,The AADT for the year 2020.,Numeric value
+,AAWDT 2020,The AAWDT for the year 2020.,Numeric value
+,AADT 2021,The AADT for the year 2021.,Numeric value
+,AAWDT 2021,The AAWDT for the year 2021.,Numeric value
+,AADT 2022,The AADT for the year 2022.,Numeric value
+,AAWDT 2022,The AAWDT for the year 2022.,Numeric value
+,Global ID,一个独特标识符,"Series of numbers, letters, and symbols."
+Edge_Names_With_Nodes,Street_Name,记录出现在网络中的街道名称，通过这个变量可以获取到相关街道的具体名字信息。,"e.g., 3rd Street"
+,Nodes,记录了沿着街道出现的节点列表，借助这个变量能获取到相应街道上节点的相关信息。,List of OSMid for the nodes.
